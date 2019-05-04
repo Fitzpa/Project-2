@@ -3,10 +3,11 @@ Pages
 TEAMS - two pages under the team 1. YOUTH TEAMS 2. ADULT TEAMS. 
 PLAYER -registaration with a prove of their I.D upload . FIRST NAME, LAST NAME, D.O.B and drop down they can add them self to their team.
 SCHEDULE - has a link to maps 
-STANDINGS - 
+STANDINGS - every time you add score it will update to highest point to lowest point
+TRANSFER WINDOW - where players can switches teams with fee 
 RULES - ling to google drive pdf
 NEWS
-TEAM STORE
+
 
 
 
