@@ -1,0 +1,40 @@
+<div>
+    <button id="back">back</button>
+</div>
+<div>
+    <h1>On this page the user will select if they are a coach, a player or a parent</h1>
+</div>
+<div>
+    <div>
+        <button id="coach">Coach</button>
+    </div>
+    <div>
+        <button id="player">Player</button>
+    </div>
+    <div>
+        <button id="parent">Parent</button>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $("#back").on("click", function () {
+        window.location = "/signup";
+    });
+
+    $("#coach").on("click", function () {
+        window.location = "/coach";
+    });
+
+    $("#player").on("click", function () {
+        window.location = "/player";
+    });
+
+    $("#parent").on("click", function () {
+        window.location = "/parent";
+    });
+
+
+</script>

@@ -1,0 +1,41 @@
+<h1>This is the coach sign up page</h1>
+<form id="coachForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName">
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" id="lastName">
+
+    <label for="emailAddress">Email address:</label>
+    <input type="email" name="emailAdress" id="emailAdress">
+
+    <label for="teamName">Team Name:</label>
+    <input type="text" name="teamName" id="teamName">
+
+    <button id="submit">Continue</button>
+</form>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Getting a reference to the input fields
+        var first = $("#firstName").val();
+        var last = $("#lastName").val();
+        var email = $("#emailAddress").val();
+        var team = $("#teamName").val();
+
+
+        function insertCoach(event) {
+            event.preventDefault();
+            var coach = {
+                firstName: first,
+                lastName: last,
+                emailAddress: email,
+                teamName: team
+            };
+
+            $.post("/api/coaches", coach);
+        }
+
+        $(document).on("#submit", "#coachForm", insertCoach);
+    });
+</script>
