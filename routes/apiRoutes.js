@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
+  app.post("/api/coaches", function(req, res) {
     db.Coach.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,

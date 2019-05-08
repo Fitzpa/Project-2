@@ -6,8 +6,8 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  app.get("/signup", function(req, res) {
-    res.render("signup");
+  app.get("/selection", function(req, res) {
+    res.render("selection");
   });
 
   app.get("/coach", function(req, res) {
