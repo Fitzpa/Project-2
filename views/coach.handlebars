@@ -36,6 +36,8 @@
             $.post("/api/coaches", coach);
         }
 
-        $(document).on("#submit", "#coachForm", insertCoach);
+        $(document).on("#submit", "#coachForm", insertCoach, function() {
+            window.location = "/selection";
+        });
     });
 </script>
