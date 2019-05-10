@@ -10,21 +10,13 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/coaches", function(req, res) {
+    var coach = req.body;
     db.Coach.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      teamName: req.body.teamName
-    })
-      .then(function(dbCoach) {
-        // We have access to the new coach as an argument inside of the callback function
-        res.json(dbCoach);
-      })
-      .catch(function(err) {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-        res.json(err);
-      });
+      firstName: coach.firstName,
+      lastName: coach.lastName,
+      email: coach.email,
+      teamName: coach.teamName
+    });
   });
 
   // Delete an example by id
