@@ -1,14 +1,18 @@
 <div class="loginNav">
     <button id="cancel">Cancel</button>
     <h3>Log in</h3>
-    <h2>Enter your email address:</h2>
-    <input id="emailAddress" type="text">
-    <button class="submit">Submit</button>
+    <form action="">
+        <label for="emailaddress">Email:</label>
+        <input name="password" id="emailAddress" type="text">
+        <label for="password">password</label>
+        <input name="password" id="password" type="text">
+        <button class="submit">Submit</button>
+    </form>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    $("#cancel").on("click", function() {
+    $("#cancel").on("click", function () {
         window.location = "/";
     });
 </script>
