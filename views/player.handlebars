@@ -5,7 +5,7 @@
                 <i class="fas fa-user-plus"></i> Register
             </h1>
             {{!-- <% include ./partials/messages %> --}}
-            <form action="/users/addSchedule" method="POST">
+            <form>
                 <div class="form-group">
                     <label for="firstName">First Name:</label>
                     <input type="text" id="firstName" firstName="firstName" class="form-control"
@@ -47,25 +47,25 @@
 <script>
     $("#submit").on("click",
 
-        // A function to handle what happens when the form is submitted to create a new Coach
-        function handleCoachFormSubmit(event) {
+        // A function to handle what happens when the form is submitted to create a new Player
+        function handlePlayerFormSubmit(event) {
             event.preventDefault();
             // Don't do anything if the name fields hasn't been filled out
 
             // Constructing a newPost object to hand to the database
-            var newCoach = {
+            var newPlayer = {
                 firstName: $("#firstName").val(),
                 lastName: $("#lastName").val(),
                 email: $("#emailAddress").val(),
                 teamName: $("#teamName").val(),
                 password: $("password").val(),
-                password2: $("password2").val()
+                password: $("password2").val()
             };
 
-            $.post("/api/coaches", newCoach).then(function (data) {
+            $.post("/api/Players", newPlayer).then(function (data) {
                 console.log(data);
 
             });
-            window.location = "/addSchedule";
+            window.location = "/";
         });
 </script>

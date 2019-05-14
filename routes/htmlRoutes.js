@@ -1,69 +1,81 @@
+const express = require("express");
+const router = express.Router();
 var db = require("../models");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/login", function(req, res) {
-    res.render("login");
-  });
+// module.exports = function(app) {
+//   // Load index page
+router.get("/login", function(req, res) {
+  res.render("login");
+});
 
-  app.get("/selection", function(req, res) {
-    res.render("selection");
-  });
+router.get("/", function(req, res) {
+  res.render("selection");
+});
 
-  app.get("/coach", function(req, res) {
-    res.render("coach");
-  });
+router.get("/coach", function(req, res) {
+  res.render("coach");
+});
 
-  app.get("/addSchedule", function(req, res) {
-    res.render("addSchedule");
-  });
+router.get("/player", function(req, res) {
+  res.render("player");
+});
 
-  app.get("/dashboard", function(req, res) {
-    res.render("mainDashboard");
-  });
+router.get("/parent", function(req, res) {
+  res.render("parent");
+});
 
-  app.get("/addToSchedule", function(req, res) {
-    res.render("addToSchedule");
-  });
+router.get("/users/addSchedule", function(req, res) {
+  res.render("addSchedule");
+});
 
-  app.get("/addPlayer", function(req, res) {
-    res.render("addPlayer");
-  });
+router.get("/dashboard", function(req, res) {
+  res.render("mainDashboard");
+});
 
-  app.get("/viewSchedule", function(req, res) {
-    res.render("viewSchedule");
-  });
+router.get("/addToSchedule", function(req, res) {
+  res.render("addToSchedule");
+});
 
-  app.get("/addGame", function(req, res) {
-    res.render("addGame");
-  });
+router.get("/users/addPlayer", function(req, res) {
+  res.render("addPlayer");
+});
 
-  app.get("/addPractice", function(req, res) {
-    res.render("addPractice");
-  });
+router.get("/viewSchedule", function(req, res) {
+  res.render("viewSchedule");
+});
 
-  app.get("/viewRoster", function(req, res) {
-    res.render("viewRoster");
-  });
+router.get("/addGame", function(req, res) {
+  res.render("addGame");
+});
 
-  // Route for the login/signup page
-  app.get("/", function(req, res) {
-    res.render("loginsignup");
-  });
+router.get("/users/addPractice", function(req, res) {
+  res.render("addPractice");
+});
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
+router.get("/viewRoster", function(req, res) {
+  res.render("viewRoster");
+});
+
+// Route for the login/signup page
+router.get("/", function(req, res) {
+  res.render("loginsignup");
+});
+
+// Load example page and pass in an example by id
+router.get("/example/:id", function(req, res) {
+  db.Example.findOne({ where: { id: req.params.id } }).then(function(
+    dbExample
+  ) {
+    res.render("example", {
+      example: dbExample
     });
   });
+});
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-};
+// Render 404 page for any unmatched routes
+router.get("*", function(req, res) {
+  res.render("404");
+});
+// };
+
+module.exports = router;

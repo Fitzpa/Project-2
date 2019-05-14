@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     firstName: { type: DataTypes.STRING, allowNull: false },
     lastName: { type: DataTypes.STRING, allowNull: false },
     email: { type: DataTypes.STRING, allowNull: false },
-    teamName: { type: DataTypes.STRING, allowNull: false }
+    teamName: { type: DataTypes.STRING, allowNull: false },
+    password: { type: DataTypes.STRING, validate: { notNull: true, notEmpty: true, len: [6, 140] }}
   });
 
   Coach.associate = function(models) {

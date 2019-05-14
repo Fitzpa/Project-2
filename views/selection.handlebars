@@ -1,22 +1,21 @@
-<div>
-    <button id="back">back</button>
-</div>
-<div>
-    <h1>On this page the user will select if they are a coach, a player or a parent</h1>
-</div>
-<div>
-    <div>
-        <button id="coach">Coach</button>
-    </div>
-    <div>
-        <button id="player">Player</button>
-    </div>
-    <div>
-        <button id="parent">Parent</button>
-    </div>
-</div>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <img src="../public/images/triangle7.png" alt="other">
+            <img src="../public/images/triangle7_S.jpg" class="card-img-top" alt="logo of seven v seven">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-user-plus"></i> Register
+            </h1>
+            {{!-- <% include ./partials/messages %> --}}
 
+            <button class="btn btn-primary btn-block" id="coach">Coach</button>
+            <button class="btn btn-primary btn-block" id="player">Player</button>
+            <button class="btn btn-primary btn-block" id="parent">Parent</button>
 
+            <p class="lead mt-4">Have An Account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
@@ -35,6 +34,5 @@
     $("#parent").on("click", function () {
         window.location = "/parent";
     });
-
 
 </script>
